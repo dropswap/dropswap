@@ -9,6 +9,7 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix"
   },
   "dependencies": {
+    "@dropswap/dsdk": "*",
     "dotenv": "^8.2.0",
     "lodash-es": "^4.17.21",
     "next": "10.0.9",
@@ -16,9 +17,6 @@
     "next-transpile-modules": "^6.3.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
-  },
-  "peerDependencies": {
-    "@dropswap/dsdk": "*"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.4",

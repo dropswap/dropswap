@@ -7,7 +7,8 @@
   "scripts": {
     "test": "yarn wsrun -a test",
     "dev": "yarn wsrun -ae dev",
-    "build": "yarn wsrun -t build"
+    "build": "yarn wsrun -t build",
+    "build:interface": "yarn wsrun -trp @dropswap/interface -c build"
   },
   "devDependencies": {
     "wsrun": "^5.2.4"

@@ -10,11 +10,16 @@
     "build:vercel": "yarn --cwd ../../ build:interface"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.4.1",
     "@dropswap/dsdk": "file:../dsdk",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
     "dotenv": "^8.2.0",
+    "framer-motion": "^4.0.0",
     "lodash-es": "^4.17.21",
     "next": "10.0.9",
     "next-compose-plugins": "^2.2.1",
+    "next-seo": "^4.22.0",
     "next-transpile-modules": "^6.3.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"

@@ -1,6 +1,6 @@
 # DropSwap
 
-> Log on. Drop in. Swap Out.
+> Log on, drop in, swap out.
 
 DropSwap is an implementation of the constant product automated market maker exchange for ERC1155 assets, aka **uniswap for NFTs**.
 

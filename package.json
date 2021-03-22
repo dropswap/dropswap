@@ -1,15 +1,15 @@
 {
   "name": "root",
   "private": true,
-  "devDependencies": {
-    "lerna": "^3.22.1"
-  },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "test": "yarn lerna run --stream test",
-    "dev": "yarn lerna run --stream dev",
-    "build": "yarn lerna run --stream build"
+    "test": "yarn wsrun -a test",
+    "dev": "yarn wsrun -ae dev",
+    "build": "yarn wsrun -t build"
+  },
+  "devDependencies": {
+    "wsrun": "^5.2.4"
   }
 }

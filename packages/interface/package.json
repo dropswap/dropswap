@@ -9,7 +9,7 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix"
   },
   "dependencies": {
-    "@dropswap/dsdk": "*",
+    "@dropswap/dsdk": "file:../dsdk",
     "dotenv": "^8.2.0",
     "lodash-es": "^4.17.21",
     "next": "10.0.9",

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint:fix": "eslint . --ext .ts,.tsx --fix"
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "build:vercel": "yarn --cwd ../../ build:interface"
   },
   "dependencies": {
     "@dropswap/dsdk": "file:../dsdk",

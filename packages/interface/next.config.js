@@ -10,26 +10,26 @@ const { withPlugins } = require('next-compose-plugins');
 // const withPino = require('next-pino');
 const withTM = require('next-transpile-modules')(['@dropswap/dsdk', 'lodash-es']);
 
-// const withSvgr = (nextConfig = {}) => {
-//   return Object.assign({}, nextConfig, {
-//     webpack(config, options) {
-//       config.module.rules.push({
-//         test: /\.svg$/,
-//         use: ['@svgr/webpack'],
-//       });
+const withSvgr = (nextConfig = {}) => {
+  return Object.assign({}, nextConfig, {
+    webpack(config, options) {
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      });
 
-//       if (typeof nextConfig.webpack === 'function') {
-//         return nextConfig.webpack(config, options);
-//       }
+      if (typeof nextConfig.webpack === 'function') {
+        return nextConfig.webpack(config, options);
+      }
 
-//       return config;
-//     },
-//   });
-// };
+      return config;
+    },
+  });
+};
 
 module.exports = withPlugins(
   [
-    // [withSvgr],
+    [withSvgr],
     // [
     //   withBundleAnalyzer,
     //   {

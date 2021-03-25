@@ -7,12 +7,12 @@ import { forwardRef } from '@chakra-ui/system';
  * A view that arranges its children in a horizontal line.
  */
 export const Row = forwardRef<StackProps, 'div'>(function Row(props, ref) {
-  return <Stack ref={ref} {...props} direction="row" />;
+  return <Stack ref={ref} {...props} direction="row" align="stretch" />;
 });
 
 /**
  * A view that arranges its children in a vertical line.
  */
 export const Column = forwardRef<StackProps, 'div'>(function Column(props, ref) {
-  return <Stack ref={ref} {...props} direction="column" />;
+  return <Stack ref={ref} {...props} direction="column" align="stretch" />;
 });

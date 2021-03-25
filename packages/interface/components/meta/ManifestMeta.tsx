@@ -4,7 +4,7 @@ export function ManifestMeta() {
   return (
     <Head>
       <meta charSet="UTF-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width, viewport-fit=cover" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
 
       <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />

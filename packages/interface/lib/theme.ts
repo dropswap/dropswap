@@ -1,10 +1,10 @@
 import { extendTheme, ThemeOverride } from '@chakra-ui/react';
+import defaultTheme from '@chakra-ui/theme';
 
 const override: ThemeOverride = {
   fonts: {
-    body: "'Titillium Web', sans-serif",
-    heading: "'DR RAYMOND', sans-serif",
-    mono: 'monospace',
+    body: `'Titillium Web', ${defaultTheme.fonts.body}`,
+    heading: `'DR RAYMOND', ${defaultTheme.fonts.heading}`,
   },
   fontSizes: {},
   fontWeights: {
@@ -15,6 +15,7 @@ const override: ThemeOverride = {
     // transparent: 'rgba(1, 1, 1, 0)',
     yin: '#000000',
     yang: '#FFFFFF',
+    darkglass: 'rgba(0,0,0,0.3)',
     blackish: '#121212',
     grey: '#F6F6F6',
     smudge: '#E8E9F1',
@@ -28,7 +29,7 @@ const override: ThemeOverride = {
     rainbow5: '#F5FAFB',
   },
   radii: {
-    pill: '0.75rem',
+    pill: '2rem',
   },
   lineHeights: {},
   styles: {
@@ -38,8 +39,8 @@ const override: ThemeOverride = {
       },
       body: {
         fontFamily: 'body',
-        color: 'blackish',
-        bg: 'grey',
+        color: 'yang',
+        bg: 'yin',
         overflowX: 'hidden',
         lineHeight: 'normal',
       },
@@ -56,13 +57,24 @@ const override: ThemeOverride = {
         bgGradient: 'linear(to-l, #fafafa, #eaeaea, #eaeaea, #fafafa)',
       },
     },
+    FlatIconButton: {
+      baseStyle: {
+        h: '14',
+        w: '14',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+    },
     PillButton: {
       parts: ['button', 'icon', 'text'],
       baseStyle: {
         button: {
+          h: 8,
           py: 1,
           px: 3,
           borderRadius: 'pill',
+          color: 'yin',
         },
         icon: {},
         text: {},

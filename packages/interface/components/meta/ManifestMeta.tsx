@@ -3,7 +3,9 @@ import Head from 'next/head';
 export function ManifestMeta() {
   return (
     <Head>
+      <meta charSet="UTF-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
 
       <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
       <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />

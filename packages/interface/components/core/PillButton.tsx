@@ -2,11 +2,11 @@ import { Box } from '@chakra-ui/layout';
 import { forwardRef, useMultiStyleConfig } from '@chakra-ui/system';
 import { PropsWithChildren, ReactElement } from 'react';
 
-import { Row } from '../helpers/Column';
+import { Row } from '../helpers/RowColumn';
 
 export const PillButton = forwardRef<
   PropsWithChildren<{ icon?: ReactElement; secondary?: boolean }>,
-  'button'
+  'div'
 >(function PillButton({ icon, children, secondary = false, ...delegated }, ref) {
   const styles = useMultiStyleConfig('PillButton', {
     variant: secondary ? 'secondary' : 'default',

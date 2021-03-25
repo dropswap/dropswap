@@ -2,9 +2,9 @@ import { extendTheme, ThemeOverride } from '@chakra-ui/react';
 
 const override: ThemeOverride = {
   fonts: {
-    // body: "'DM Sans', sans-serif",
-    // heading: "'DM Sans', sans-serif",
-    // mono: "'DM Mono', monospace",
+    body: "'Titillium Web', sans-serif",
+    heading: "'DR RAYMOND', sans-serif",
+    mono: 'monospace',
   },
   fontSizes: {},
   fontWeights: {
@@ -30,6 +30,7 @@ const override: ThemeOverride = {
   radii: {
     pill: '0.75rem',
   },
+  lineHeights: {},
   styles: {
     global: {
       html: {
@@ -48,6 +49,13 @@ const override: ThemeOverride = {
     },
   },
   components: {
+    Skeleton: {
+      baseStyle: {
+        borderRadius: 4,
+        backgroundSize: '400% 100%',
+        bgGradient: 'linear(to-l, #fafafa, #eaeaea, #eaeaea, #fafafa)',
+      },
+    },
     PillButton: {
       parts: ['button', 'icon', 'text'],
       baseStyle: {

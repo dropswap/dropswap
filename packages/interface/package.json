@@ -19,6 +19,7 @@
     "lodash-es": "^4.17.21",
     "next": "10.0.9",
     "next-compose-plugins": "^2.2.1",
+    "next-google-fonts": "^2.1.0",
     "next-seo": "^4.22.0",
     "next-transpile-modules": "^6.3.0",
     "react": "17.0.1",

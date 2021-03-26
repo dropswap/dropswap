@@ -13,8 +13,8 @@ export function ScrollableRow({
       overflowY="hidden"
       overflowX="auto"
       sx={{
-        'scrollbar-width': 'none',
-        '-ms-overflow-style': 'none',
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
         '&::-webkit-scrollbar': {
           display: 'none',
         },

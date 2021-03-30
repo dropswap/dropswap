@@ -2,10 +2,10 @@ export interface SearchParams {
   // full-text query assets by name, description (english-only)
   query?: string;
 
-  // facet by collection id (currently, address)
+  // facet by collection id (currently: address. future: some uid)
   collection?: string;
 
-  // filter by owner id (currently, address or ENS)
+  // filter by owner id (currently: address)
   owner?: string;
 
   // pagination
@@ -15,7 +15,7 @@ export interface SearchParams {
 }
 
 export interface SearchDocument {
-  id: string; // a CAIP-19
+  id: string; // a CAIP-19 id
 }
 
 export interface SearchResponse {

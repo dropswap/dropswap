@@ -13,7 +13,7 @@ export function Drop(delegated: ComponentPropsWithoutRef<typeof MotionBox>) {
 export function Swap(delegated: ComponentPropsWithoutRef<typeof MotionBox>) {
   return (
     <MotionBox display="inline-block" layoutId="swap" {...delegated}>
-      Swap
+      swap
     </MotionBox>
   );
 }

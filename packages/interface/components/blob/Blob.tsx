@@ -7,9 +7,13 @@ import { MotionBox } from '../helpers/MotionBox';
 
 const CALL_TO_ACTION = 'drop here to add to your swaps';
 const FLAVOR_TEXTS = [
+  // https://en.wikipedia.org/wiki/Stop,_drop_and_roll
   'drop swap and roll',
+  // https://en.wikipedia.org/wiki/Turn_on,_tune_in,_drop_out
   'log on, drop in, swap out',
+  // https://www.youtube.com/watch?v=hsm4poTWjMs
   "i'm talking swap, swap, swap",
+  // https://www.youtube.com/watch?v=WEYMaSoXQUM
   'pop, drop, and swap it',
 ];
 

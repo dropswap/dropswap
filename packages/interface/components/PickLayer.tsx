@@ -4,6 +4,7 @@ import { AnimatePresence, Variants } from 'framer-motion';
 
 import { PickState } from '../containers/PickState';
 import GoIcon from '../icons/go.svg';
+import SwapIcon from '../icons/swap.svg';
 
 import { Drop, Swap } from './DropAndSwap';
 import { Blob } from './blob/Blob';
@@ -20,6 +21,12 @@ const CTAVariants: Variants = {
   initial: { translateY: '-100%', opacity: 0 },
   animate: { translateY: '0%', opacity: 1 },
   exit: { translateY: '-100%', opacity: 0 },
+};
+
+const SwapButtonVariants: Variants = {
+  initial: { translateX: 'calc(100% + 1rem)' },
+  animate: { translateX: 'calc(0% + 0rem)', transition: { delay: 0.5 } },
+  exit: { translateX: 'calc(100% + 1rem)' },
 };
 
 export function PickLayer() {
@@ -55,7 +62,15 @@ export function PickLayer() {
             >
               <Blob />
             </AspectRatio>
-            <HStack h="14" position="fixed" top="0" left="0" right="0" px="3">
+            <HStack
+              h="14"
+              position="fixed"
+              top="0"
+              left="0"
+              right="0"
+              px="3"
+              justifyContent="space-between"
+            >
               <Heading as="h1" fontSize="2xl" color="yin">
                 <Drop />
                 <MotionBox
@@ -74,6 +89,11 @@ export function PickLayer() {
                   &nbsp;it
                 </MotionBox>
               </Heading>
+              <MotionBox variants={SwapButtonVariants}>
+                <Button prefix={<SwapIcon />} light>
+                  1
+                </Button>
+              </MotionBox>
             </HStack>
             <MotionBox
               position="absolute"

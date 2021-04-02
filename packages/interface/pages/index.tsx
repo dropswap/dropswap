@@ -7,7 +7,6 @@ import { Header } from '../components/Header';
 import { Column } from '../components/helpers/RowColumn';
 import { ScrollableRow } from '../components/helpers/ScrollableRow';
 import { Skeleton } from '../components/helpers/Skeleton';
-import { Container } from '../components/layout/Container';
 import { UniversalLayout } from '../layouts/UniversalLayout';
 import { ComponentWithLayout } from '../lib/ComponentWithLayout';
 
@@ -25,7 +24,7 @@ function Home() {
   return (
     <>
       <Header h="14" position="fixed" top="0" left="0" right="0" zIndex="sticky" />
-      <Container as="main" w={WIDTH_WITHOUT_SCROLLBAR} overflowY="auto" py="14">
+      <Box as="main" w={WIDTH_WITHOUT_SCROLLBAR} overflowY="auto" py="14">
         <Column pt={4} spacing={4}>
           <Heading as="h2" px={4} fontSize="2xl" fontWeight="regular">
             <Box as="span" textDecoration="underline">
@@ -47,7 +46,7 @@ function Home() {
             <Skeleton h={8} w={24} />
           </ScrollableRow>
         </Column>
-      </Container>
+      </Box>
       <Footer h="14" position="fixed" bottom="0" left="0" right="0" zIndex="sticky" />
     </>
   );

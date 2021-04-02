@@ -6,14 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "generate": "chakra-cli tokens lib/theme",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "build:vercel": "yarn --cwd ../../ build:interface"
+    "build:vercel": "yarn --cwd ../../ build:interface",
+    "postinstall": "yarn run generate"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.4.1",
     "@dropswap/dsdk": "file:../dsdk",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "@react-aria/interactions": "^3.3.4",
+    "@react-aria/utils": "^3.7.0",
+    "@rooks/use-toggle": "^4.10.1",
     "dotenv": "^8.2.0",
     "framer-motion": "^4.0.0",
     "lodash-es": "^4.17.21",
@@ -26,6 +31,7 @@
     "react-dom": "17.0.1"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^1.3.0",
     "@svgr/webpack": "^5.5.0",
     "@types/lodash-es": "^4.17.4",
     "@types/node": "^14.14.35",

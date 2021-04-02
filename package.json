@@ -5,9 +5,10 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "yarn wsrun -a -trp @dropswap/dsdk -c test",
-    "dev": "yarn wsrun -ae dev",
-    "build": "yarn wsrun -t build",
+    "test": "yarn wsrun -am -trp @dropswap/dsdk -c test",
+    "dev": "yarn wsrun -aem dev",
+    "build": "yarn wsrun -tm build",
+    "generate": "yarn wsrun -m generate",
     "build:interface": "yarn wsrun -trp @dropswap/interface -c build"
   },
   "devDependencies": {

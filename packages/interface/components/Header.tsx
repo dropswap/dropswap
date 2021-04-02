@@ -1,16 +1,17 @@
 import { Box, BoxProps, Center, Heading } from '@chakra-ui/layout';
+import useToggle from '@rooks/use-toggle';
 
 import MenuIcon from '../icons/menu.svg';
 import SwapIcon from '../icons/swap.svg';
 
+import { Button } from './core/Button';
 import { FlatIconButton } from './core/FlatIconButton';
-import { PillButton } from './core/PillButton';
-import { Container } from './layout/Container';
 
 export function Header(delegated: BoxProps) {
+  const [secondary, toggle] = useToggle(false);
   return (
     <Box as="header" {...delegated} bg="darkglass" sx={{ backdropFilter: 'blur(2rem)' }}>
-      <Container display="flex" flexDirection="row" wide>
+      <Box display="flex" flexDirection="row">
         <FlatIconButton label="Open menu">
           <MenuIcon />
         </FlatIconButton>
@@ -22,9 +23,11 @@ export function Header(delegated: BoxProps) {
           </Heading>
         </Box>
         <Center pr="3">
-          <PillButton icon={<SwapIcon />}>Swap</PillButton>
+          <Button icon={<SwapIcon />} onClick={toggle} secondary={secondary}>
+            Swap
+          </Button>
         </Center>
-      </Container>
+      </Box>
     </Box>
   );
 }

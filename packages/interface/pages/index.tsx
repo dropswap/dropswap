@@ -1,4 +1,5 @@
 import { Box, Heading } from '@chakra-ui/layout';
+import { AnimateSharedLayout } from 'framer-motion';
 
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
@@ -17,7 +18,7 @@ const WIDTH_WITHOUT_SCROLLBAR = 'calc(100vw - (100vw - 100%))';
 function Home() {
   const { onDrag } = PickState.useContainer();
   return (
-    <>
+    <AnimateSharedLayout type="crossfade">
       <Header h="14" position="fixed" top="0" left="0" right="0" zIndex="sticky" />
       <Box as="main" w={WIDTH_WITHOUT_SCROLLBAR} overflowY="auto" py="14" onClick={onDrag}>
         <Column pt={4} spacing={4}>
@@ -44,7 +45,7 @@ function Home() {
       </Box>
       <Footer h="14" position="fixed" bottom="0" left="0" right="0" zIndex="sticky" />
       <PickLayer />
-    </>
+    </AnimateSharedLayout>
   );
 }
 

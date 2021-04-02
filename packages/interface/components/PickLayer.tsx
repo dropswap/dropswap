@@ -1,10 +1,11 @@
-import { AspectRatio, Box, HStack } from '@chakra-ui/layout';
+import { AspectRatio, Box, Heading, HStack } from '@chakra-ui/layout';
 import { Portal } from '@chakra-ui/portal';
 import { AnimatePresence, Variants } from 'framer-motion';
 
 import { PickState } from '../containers/PickState';
 import GoIcon from '../icons/go.svg';
 
+import { Drop, Swap } from './DropAndSwap';
 import { Blob } from './blob/Blob';
 import { Button } from './core/Button';
 import { MotionBox } from './helpers/MotionBox';
@@ -13,6 +14,12 @@ const FooterVariants: Variants = {
   initial: { translateY: '100%' },
   animate: { translateY: '0%' },
   exit: { translateY: '100%' },
+};
+
+const CTAVariants: Variants = {
+  initial: { translateY: '-100%', opacity: 0 },
+  animate: { translateY: '0%', opacity: 1 },
+  exit: { translateY: '-100%', opacity: 0 },
 };
 
 export function PickLayer() {
@@ -48,6 +55,26 @@ export function PickLayer() {
             >
               <Blob />
             </AspectRatio>
+            <HStack h="14" position="fixed" top="0" left="0" right="0" px="3">
+              <Heading as="h1" fontSize="2xl" color="yin">
+                <Drop />
+                <MotionBox
+                  display="inline-block"
+                  variants={CTAVariants}
+                  transition={{ ease: 'easeOut' }}
+                >
+                  &nbsp;it to&nbsp;
+                </MotionBox>
+                <Swap />
+                <MotionBox
+                  display="inline-block"
+                  variants={CTAVariants}
+                  transition={{ ease: 'easeOut' }}
+                >
+                  &nbsp;it
+                </MotionBox>
+              </Heading>
+            </HStack>
             <MotionBox
               position="absolute"
               left="0"

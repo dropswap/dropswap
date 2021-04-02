@@ -28,7 +28,8 @@
     "next-seo": "^4.22.0",
     "next-transpile-modules": "^6.3.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "unstated-next": "^1.1.0"
   },
   "devDependencies": {
     "@chakra-ui/cli": "^1.3.0",

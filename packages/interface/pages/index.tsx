@@ -1,12 +1,12 @@
-import { Box, Heading, Text } from '@chakra-ui/layout';
-import { search, SearchResponse } from '@dropswap/dsdk';
-import { useEffect, useState } from 'react';
+import { Box, Heading } from '@chakra-ui/layout';
 
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
+import { PickLayer } from '../components/PickLayer';
 import { Column } from '../components/helpers/RowColumn';
 import { ScrollableRow } from '../components/helpers/ScrollableRow';
 import { Skeleton } from '../components/helpers/Skeleton';
+import { PickState } from '../containers/PickState';
 import { UniversalLayout } from '../layouts/UniversalLayout';
 import { ComponentWithLayout } from '../lib/ComponentWithLayout';
 
@@ -15,16 +15,11 @@ import { ComponentWithLayout } from '../lib/ComponentWithLayout';
 const WIDTH_WITHOUT_SCROLLBAR = 'calc(100vw - (100vw - 100%))';
 
 function Home() {
-  const [data, setData] = useState<SearchResponse>(null);
-
-  useEffect(() => {
-    search({}).then(setData);
-  }, []);
-
+  const { onDrag } = PickState.useContainer();
   return (
     <>
       <Header h="14" position="fixed" top="0" left="0" right="0" zIndex="sticky" />
-      <Box as="main" w={WIDTH_WITHOUT_SCROLLBAR} overflowY="auto" py="14">
+      <Box as="main" w={WIDTH_WITHOUT_SCROLLBAR} overflowY="auto" py="14" onClick={onDrag}>
         <Column pt={4} spacing={4}>
           <Heading as="h2" px={4} fontSize="2xl" fontWeight="regular">
             <Box as="span" textDecoration="underline">
@@ -48,6 +43,7 @@ function Home() {
         </Column>
       </Box>
       <Footer h="14" position="fixed" bottom="0" left="0" right="0" zIndex="sticky" />
+      <PickLayer />
     </>
   );
 }

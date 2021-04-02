@@ -27,13 +27,17 @@ export default function Components() {
   return (
     <Container py={4}>
       <Column spacing={4}>
-        <ComponentSection title="Pill Buttons">
-          <Button icon={<SwapIcon />}>Swap</Button>
+        <ComponentSection title="Buttons (yin)">
+          <Button prefix={<SwapIcon />}>Swap</Button>
+          <Button secondary>Cancel</Button>
         </ComponentSection>
 
-        <ComponentSection title="Secondary Pill Buttons" light>
-          <Button icon={<SwapIcon />} secondary>
+        <ComponentSection title="Buttons (yang)" light>
+          <Button prefix={<SwapIcon />} light>
             Swap
+          </Button>
+          <Button secondary light>
+            Cancel
           </Button>
         </ComponentSection>
 

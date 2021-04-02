@@ -11,12 +11,21 @@ const offsetForState = (hovered: boolean, pressed: boolean) =>
   pressed ? '-1px' : hovered ? '0px' : '1px';
 
 export const Button = forwardRef<
-  PropsWithChildren<{ icon?: ReactElement; secondary?: boolean }>,
+  PropsWithChildren<{
+    prefix?: ReactElement;
+    postfix?: ReactElement;
+    secondary?: boolean;
+    light?: boolean;
+  }>,
   'button'
->(function Button({ icon, children, secondary = false, ...delegated }, ref) {
+>(function Button(
+  { prefix, postfix, children, secondary = false, light = false, ...delegated },
+  ref,
+) {
   const theme = useTheme();
   const styles = useMultiStyleConfig('Button', {
-    variant: secondary ? 'secondary' : 'default',
+    size: secondary ? 'secondary' : 'primary',
+    variant: light ? 'light' : 'dark',
   });
 
   const { hoverProps, isHovered } = useHover({ isDisabled: delegated.disabled });
@@ -27,7 +36,7 @@ export const Button = forwardRef<
 
   const offset = offsetForState(isHovered, isPressed);
   const color = theme.colors[styles.button.borderColor as string];
-  styles.button.boxShadow = `${offset} ${offset} 0px 0px ${color}`;
+  styles.button.boxShadow = secondary ? 'none' : `${offset} ${offset} 0px 0px ${color}`;
 
   return (
     <Row
@@ -38,8 +47,9 @@ export const Button = forwardRef<
       sx={styles.button}
       {...mergeProps(hoverProps, pressProps, delegated)}
     >
-      {icon && <Box sx={styles.icon}>{icon}</Box>}
+      {prefix && <Box sx={styles.icon}>{prefix}</Box>}
       <Box sx={styles.text}>{children}</Box>
+      {postfix && <Box sx={styles.icon}>{postfix}</Box>}
     </Row>
   );
 });

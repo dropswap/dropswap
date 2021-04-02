@@ -17,6 +17,12 @@ const override: ThemeOverride = {
     yang: '#FFFFFF',
     darkglass: 'rgba(0, 0, 0, 0.3)',
     blackish: '#121212',
+    // rainbow
+    rainbow1: '#F3FBFE',
+    rainbow2: '#D2F3FF',
+    rainbow3: '#E1EAFF',
+    rainbow4: '#D6F7FF',
+    rainbow5: '#F5FAFB',
   },
   radii: {
     pill: '2rem',
@@ -60,22 +66,34 @@ const override: ThemeOverride = {
           h: 8,
           py: 1,
           px: 3,
-          borderRadius: '4',
-          border: '1px',
         },
         icon: {},
         text: {},
       },
+      sizes: {
+        primary: {
+          button: {
+            borderRadius: '4',
+            border: '1px',
+          },
+        },
+        secondary: {
+          button: {
+            _hover: {
+              textDecoration: 'underline',
+            },
+          },
+        },
+      },
       variants: {
-        default: {
+        dark: {
           button: {
             bgColor: 'yin',
             color: 'yang',
             borderColor: 'yang',
-            boxShadow: '1px 1px 0px 0px #ffffff',
           },
         },
-        secondary: {
+        light: {
           button: {
             bgColor: 'yang',
             color: 'yin',
@@ -83,7 +101,7 @@ const override: ThemeOverride = {
           },
         },
       },
-      defaultProps: { variant: 'default' },
+      defaultProps: { size: 'primary', variant: 'dark' },
     },
   },
 };

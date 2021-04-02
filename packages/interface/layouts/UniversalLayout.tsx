@@ -1,8 +1,6 @@
-import { LayoutProps } from '../lib/ComponentWithLayout';
+import { AnimateSharedLayout } from 'framer-motion';
+
+import { PickState } from '../containers/PickState';
 import nest from '../lib/nest';
 
-function NoopLayout({ children }: LayoutProps) {
-  return <>{children}</>;
-}
-
-export const UniversalLayout = nest([NoopLayout]);
+export const UniversalLayout = nest([PickState.Provider, AnimateSharedLayout]);

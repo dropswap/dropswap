@@ -40,10 +40,10 @@ export function PickLayer() {
             <AspectRatio
               ratio={1}
               position="absolute"
-              left="-15%"
-              right="-15%"
+              left="-20%"
+              right="-20%"
               top="-35%"
-              maxW="md"
+              maxW="lg"
               mx="auto"
             >
               <Blob />
